@@ -32,3 +32,6 @@
 
 ;; toggle word wrapping for markdown files
 (add-hook 'markdown-mode-hook (lambda () (toggle-word-wrap)))
+
+;; fix '400 bad request' issues with package downloads
+(add-hook 'package-mode-hook (lambda () (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")))
